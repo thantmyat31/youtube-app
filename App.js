@@ -8,33 +8,18 @@
 
 import React, {useState} from 'react';
 import {StyleSheet, View, Text, Button, Image} from 'react-native';
-import YouTube from 'react-native-youtube';
-import API from './api/private.api';
+import YouTubeComponent from './components/youtube.component';
+import ChannelHeader from './components/channelHeader.component';
 
 const App = () => {
   const [playVideo, setPlayVideo] = useState(false);
-  const [isReady, setIsReady] = useState(false);
-  const [status, setStatus] = useState();
-  const [quality, setQuality] = useState();
-  const [error, setError] = useState();
 
   return (
     <View style={styles.screen}>
-      <View style={styles.youtubeContainer}>
-        <YouTube
-          apiKey={API.YOUTUBE_API}
-          videoId="7wrGoXczHq4" // The YouTube video ID
-          play // control playback of video with true/false
-          //fullscreen // control whether the video should play in fullscreen or inline
-          loop // control whether the video should loop when ended
-          onReady={e => setIsReady(true)}
-          onChangeState={e => setStatus(e.state)}
-          onChangeQuality={e => setQuality(e.quality)}
-          onError={e => setError(e.error)}
-          style={{width: '100%', height: 300}}
-        />
+      <View style={styles.channelContainer}>
+        <ChannelHeader />
       </View>
-
+      <Text style={{fontSize: 30}}>To add React Native Navigation V5</Text>
       <Button
         title="take image"
         color="#888"
@@ -48,10 +33,10 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     alignItems: 'center',
+    backgroundColor: '#28343D',
   },
-  youtubeContainer: {
+  channelContainer: {
     width: '100%',
-    padding: 10,
   },
 });
 
