@@ -6,25 +6,21 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
-import {StyleSheet, View, Text, Button, Image} from 'react-native';
-import YouTubeComponent from './components/youtube.component';
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
 import ChannelHeader from './components/channelHeader.component';
 
-const App = () => {
-  const [playVideo, setPlayVideo] = useState(false);
+import 'react-native-gesture-handler';
+import MainNavigator from './navigation/app.navigation';
+import Color from './constants/color.constants';
 
+const App = () => {
   return (
     <View style={styles.screen}>
       <View style={styles.channelContainer}>
         <ChannelHeader />
+        <MainNavigator />
       </View>
-      <Text style={{fontSize: 30}}>To add React Native Navigation V5</Text>
-      <Button
-        title="take image"
-        color="#888"
-        onPress={() => setPlayVideo(true)}
-      />
     </View>
   );
 };
@@ -33,10 +29,11 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#28343D',
+    backgroundColor: Color.primary,
   },
   channelContainer: {
     width: '100%',
+    height: '100%',
   },
 });
 
