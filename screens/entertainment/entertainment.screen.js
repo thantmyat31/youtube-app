@@ -1,18 +1,25 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import Color from './../../constants/color.constants';
 import ThemeWrapper from '../../components/themeWrapper.component';
+import {selectedVideos} from '../../services/video.service';
+import VideosList from '../../components/videosList.component';
 
-const EntertainmentScreen = () => {
+const EntertainmentScreen = ({navigation, route}) => {
+  const currentRoute = route.name;
+  const videos = selectedVideos(currentRoute);
   return (
     <ThemeWrapper>
-      <View>
-        <Text>EntertainmentScreen</Text>
+      <View style={styles.screen}>
+        <VideosList data={videos} navigation={navigation} />
       </View>
     </ThemeWrapper>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+  },
+});
 
 export default EntertainmentScreen;

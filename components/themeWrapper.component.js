@@ -2,8 +2,8 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import Color from './../constants/color.constants';
 
-const ThemeWrapper = ({children}) => {
-  return <View style={styles.theme}>{children}</View>;
+const ThemeWrapper = ({children, style}) => {
+  return <View style={{...styles.theme, ...style}}>{children}</View>;
 };
 
 const styles = StyleSheet.create({
