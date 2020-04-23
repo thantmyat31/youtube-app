@@ -1,16 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import ThemeWrapper from '../../components/themeWrapper.component';
 import VideosList from '../../components/videosList.component';
-import {selectedVideos} from '../../services/video.service';
+import {connect} from 'react-redux';
+import {getNewsVideos} from '../../redux/video/video.action';
 
-const NewsScreen = ({navigation, route}) => {
+const NewsScreen = ({navigation, route, newsVideos, getNewsVideos}) => {
   const currentRoute = route.name;
-  const videos = selectedVideos(currentRoute);
+
+  useEffect(() => {
+    getNewsVideos();
+  }, []);
+
   return (
     <ThemeWrapper>
       <View style={styles.screen}>
-        <VideosList data={videos} navigation={navigation} />
+        {newsVideos && (
+          <VideosList
+            data={newsVideos}
+            navigation={navigation}
+            videoType={currentRoute}
+          />
+        )}
       </View>
     </ThemeWrapper>
   );
@@ -22,4 +33,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewsScreen;
+const mapStateToProps = state => ({
+  newsVideos: state.video.news.videos,
+});
+
+const mapDispatchToProps = dispatch => ({
+  getNewsVideos: () => dispatch(getNewsVideos()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(NewsScreen);

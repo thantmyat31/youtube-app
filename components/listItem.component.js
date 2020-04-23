@@ -4,9 +4,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const ListItem = ({video, onPress}) => {
   const title =
-    video.title.length > 70
-      ? `${video.title.substring(0, 70)} ...`
-      : video.title;
+    video.snippet.title.length > 70
+      ? `${video.snippet.title.substring(0, 70)} ...`
+      : video.snippet.title;
+
+  const imageUrl = video.snippet.thumbnails
+    ? video.snippet.thumbnails.default.url
+    : 'https://wallpapercave.com/wp/wp2537078.jpg';
 
   return (
     <TouchableOpacity
@@ -15,7 +19,7 @@ const ListItem = ({video, onPress}) => {
       onPress={onPress}>
       <View style={styles.list}>
         <View style={styles.imageContainer}>
-          <Image source={{uri: video.imageUrl}} style={styles.image} />
+          <Image source={{uri: imageUrl}} style={styles.image} />
         </View>
         <View style={styles.details}>
           <Text style={styles.title}>{title}</Text>

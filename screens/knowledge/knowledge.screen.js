@@ -1,16 +1,31 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import ThemeWrapper from '../../components/themeWrapper.component';
 import VideosList from '../../components/videosList.component';
-import {selectedVideos} from '../../services/video.service';
+import {connect} from 'react-redux';
+import {getKnowledgeVideos} from './../../redux/video/video.action';
 
-const KnowledgeScreen = ({navigation, route}) => {
+const KnowledgeScreen = ({
+  navigation,
+  route,
+  knowledgeVideos,
+  getKnowledgeVideos,
+}) => {
   const currentRoute = route.name;
-  const videos = selectedVideos(currentRoute);
+
+  useEffect(() => {
+    getKnowledgeVideos();
+  }, []);
   return (
     <ThemeWrapper>
       <View style={styles.screen}>
-        <VideosList data={videos} navigation={navigation} />
+        {knowledgeVideos && (
+          <VideosList
+            data={knowledgeVideos}
+            navigation={navigation}
+            videoType={currentRoute}
+          />
+        )}
       </View>
     </ThemeWrapper>
   );
@@ -22,4 +37,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default KnowledgeScreen;
+const mapStateToProps = state => ({
+  knowledgeVideos: state.video.knowledge.videos,
+});
+
+const mapDispatchToProps = dispatch => ({
+  getKnowledgeVideos: () => dispatch(getKnowledgeVideos()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(KnowledgeScreen);
