@@ -122,7 +122,8 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 22,
 		color: '#ffffff',
-		letterSpacing: 1
+		letterSpacing: 1,
+		fontFamily: 'Padauk-Regular'
 	},
 	dateContainer: {
 		marginTop: 20,
@@ -133,12 +134,14 @@ const styles = StyleSheet.create({
 		fontSize: 12,
 		color: '#ddd',
 		paddingLeft: 10,
-		letterSpacing: 1
+		letterSpacing: 1,
+		fontFamily: 'Padauk-Regular'
 	},
 	content: {
 		color: '#ffffff',
 		marginTop: 20,
-		lineHeight: 25
+		lineHeight: 25,
+		fontFamily: 'Padauk-Regular'
 	}
 });
 

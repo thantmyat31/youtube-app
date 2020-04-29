@@ -32,6 +32,8 @@
 		7AF8607ED52845B9B311DE60 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39C0F7B06D534BB2AFD42853 /* Octicons.ttf */; };
 		3DB2CB3F2198450C90E26E7B /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60EDCD63F1DA4FE3865AA1FA /* SimpleLineIcons.ttf */; };
 		7509A5E5E8824DD9BD979467 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 324E6AC369624687BEE83F8A /* Zocial.ttf */; };
+		C1E76DD2DC0448E4A0518B1D /* Padauk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2AF6B642074452E81C87EBF /* Padauk-Bold.ttf */; };
+		1B0FEB7B9584419AA4A6083D /* Padauk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFAF4CF591E04CC696284114 /* Padauk-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		39C0F7B06D534BB2AFD42853 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		60EDCD63F1DA4FE3865AA1FA /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		324E6AC369624687BEE83F8A /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A2AF6B642074452E81C87EBF /* Padauk-Bold.ttf */ = {isa = PBXFileReference; name = "Padauk-Bold.ttf"; path = "../assets/fonts/Padauk-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BFAF4CF591E04CC696284114 /* Padauk-Regular.ttf */ = {isa = PBXFileReference; name = "Padauk-Regular.ttf"; path = "../assets/fonts/Padauk-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,8 @@
 				39C0F7B06D534BB2AFD42853 /* Octicons.ttf */,
 				60EDCD63F1DA4FE3865AA1FA /* SimpleLineIcons.ttf */,
 				324E6AC369624687BEE83F8A /* Zocial.ttf */,
+				A2AF6B642074452E81C87EBF /* Padauk-Bold.ttf */,
+				BFAF4CF591E04CC696284114 /* Padauk-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -368,6 +374,8 @@
 				7AF8607ED52845B9B311DE60 /* Octicons.ttf in Resources */,
 				3DB2CB3F2198450C90E26E7B /* SimpleLineIcons.ttf in Resources */,
 				7509A5E5E8824DD9BD979467 /* Zocial.ttf in Resources */,
+				C1E76DD2DC0448E4A0518B1D /* Padauk-Bold.ttf in Resources */,
+				1B0FEB7B9584419AA4A6083D /* Padauk-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
