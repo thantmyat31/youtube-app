@@ -3,9 +3,9 @@ import { StyleSheet, View, Text, ImageBackground } from 'react-native';
 
 const ChannelHeader = () => {
 	return (
-		<ImageBackground source={{ uri: 'https://wallpaperaccess.com/full/329583.jpg' }} style={styles.headerContainer}>
+		<ImageBackground source={require('./../assets/images/cover.png')} style={styles.headerContainer}>
 			<View style={styles.headerContent}>
-				<Text style={styles.headerTitle}>Channel Name</Text>
+				<Text style={styles.headerTitle}>Channel NKE</Text>
 			</View>
 		</ImageBackground>
 	);
