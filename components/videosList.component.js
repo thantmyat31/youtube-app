@@ -11,7 +11,8 @@ const VideosList = ({
 	getVideos,
 	getNewsVideos,
 	getKnowledgeVideos,
-	getEntertainVideos
+	getEntertainVideos,
+	tabView
 }) => {
 	const [ isRefresh, setIsRefresh ] = useState(false);
 	const [ videos, setVideos ] = useState();
@@ -36,15 +37,34 @@ const VideosList = ({
 		setIsRefresh(true);
 		if (videoType.toLowerCase() === 'news') {
 			getNewsVideos();
-			setVideos(getVideos.news.videos);
+			const newsVideos = getVideos.news.videos;
+			const newsPlayList = newsVideos.filter((vid, index) => index < 5);
+			console.log(newsPlayList.length);
+			if (tabView) {
+				setVideos(newsPlayList);
+			} else {
+				setVideos(newsVideos);
+			}
 		}
 		if (videoType.toLowerCase() === 'knowledge') {
 			getKnowledgeVideos();
-			setVideos(getVideos.knowledge.videos);
+			const knowledgeVideos = getVideos.knowledge.videos;
+			const knowledgePlayList = knowledgeVideos.filter((vid, index) => index < 5);
+			if (tabView) {
+				setVideos(knowledgePlayList);
+			} else {
+				setVideos(knowledgeVideos);
+			}
 		}
 		if (videoType.toLowerCase() === 'entertain') {
 			getEntertainVideos();
-			setVideos(getVideos.entertain.videos);
+			const entertainVideos = getVideos.entertain.videos;
+			const entertainPlayList = entertainVideos.filter((vid, index) => index < 5);
+			if (tabView) {
+				setVideos(entertainPlayList);
+			} else {
+				setVideos(entertainVideos);
+			}
 		}
 	};
 

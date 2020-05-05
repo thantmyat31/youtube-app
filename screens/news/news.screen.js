@@ -4,18 +4,27 @@ import ThemeWrapper from '../../components/themeWrapper.component';
 import VideosList from '../../components/videosList.component';
 import { connect } from 'react-redux';
 import { getNewsVideos } from '../../redux/video/video.action';
+import SeeAllIcon from '../../components/seeAllIcon.component';
 
 const NewsScreen = ({ navigation, route, newsVideos, getNewsVideos }) => {
 	const currentRoute = route.name;
+	const playList = newsVideos.filter((vid, index) => index < 5);
 
 	useEffect(() => {
 		getNewsVideos();
 	}, []);
 
+	const handleOnNavigate = () => {
+		navigation.navigate('AllVideos', { label: 'News', title: 'News' });
+	};
+
 	return (
 		<ThemeWrapper>
 			<View style={styles.screen}>
-				{newsVideos && <VideosList data={newsVideos} navigation={navigation} videoType={currentRoute} />}
+				<SeeAllIcon onPress={handleOnNavigate} />
+				{newsVideos && (
+					<VideosList tabView={true} data={playList} navigation={navigation} videoType={currentRoute} />
+				)}
 			</View>
 		</ThemeWrapper>
 	);

@@ -27,8 +27,10 @@ const styles = StyleSheet.create({
 	},
 	headerTitle: {
 		color: '#ffffff',
-		fontSize: 22,
-		textTransform: 'uppercase'
+		fontSize: 30,
+		letterSpacing: 2,
+		textTransform: 'uppercase',
+		fontFamily: 'Montserrat-Regular'
 	}
 });
 

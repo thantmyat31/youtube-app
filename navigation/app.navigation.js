@@ -9,6 +9,7 @@ import EntertainmentScreen from './../screens/entertainment/entertainment.screen
 import Color from './../constants/color.constants';
 import VideoDetailsScreen from './../screens/video/video.screen';
 import LandingScreen from './../screens/landing.screen';
+import AllVideosScreen from './../screens/allVideos/allVideo.screen';
 
 const Stack = createStackNavigator();
 const Tab = createMaterialTopTabNavigator();
@@ -51,6 +52,7 @@ const MainStackNavigator = () => {
 					headerTintColor: '#ffffff'
 				}}
 			/>
+			<Stack.Screen name="AllVideos" component={AllVideosScreen} />
 		</Stack.Navigator>
 	);
 };
