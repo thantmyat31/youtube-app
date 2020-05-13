@@ -39,7 +39,7 @@ const VideosList = ({
 			getNewsVideos();
 			const newsVideos = getVideos.news.videos;
 			const newsPlayList = newsVideos.filter((vid, index) => index < 5);
-			console.log(newsPlayList.length);
+
 			if (tabView) {
 				setVideos(newsPlayList);
 			} else {

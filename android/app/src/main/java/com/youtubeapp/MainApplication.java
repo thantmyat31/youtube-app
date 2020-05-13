@@ -1,4 +1,4 @@
-package com.youtubeapp;
+package com.channelnke;
 
 import android.app.Application;
 import android.content.Context;

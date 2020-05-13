@@ -1,4 +1,4 @@
-package com.youtubeapp;
+package com.channelnke;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
